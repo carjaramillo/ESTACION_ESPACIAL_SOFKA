@@ -18,6 +18,7 @@ public class Nave {
     Double altura;
     String combustible;
     Double velocidad;
+
     //Setters and Geters
     public int getNtripulantes() {
         return ntripulantes;
@@ -97,7 +98,7 @@ public class Nave {
     public void setVelocidad(Double velocidad) {
         this.velocidad = velocidad;
     }
-    // Metodos
+    // Costructores
     public Nave(boolean estado, String tipo, String proposito, String nombre, String pais, double empuje, double peso, double potencia, double capacidad, double altura, String combustible ){
         this.estado=estado;
         this.tipo=tipo;
@@ -120,29 +121,22 @@ public class Nave {
         this.pais=pais;
         this.empuje=empuje;
         this.peso=peso;
-        
-        
-       
         this.combustible=combustible;
-        
         this.velocidad=velocidad;
     }
-    public Nave(int ntripulantes, boolean estado, String tipo, String proposito, String nombre, String pais, Double peso, Double capacidad,  String combustible ){
+    public Nave(int ntripulantes, boolean estado, String tipo, String proposito, String nombre, String pais, Double peso,  String combustible ){
+        
         this.ntripulantes=ntripulantes;
         this.estado=estado;
         this.tipo=tipo;
         this.proposito=proposito;
         this.nombre=nombre;
         this.pais=pais;
-        
         this.peso=peso;
-        
-        this.capacidad=capacidad;
-        
         this.combustible=combustible;
         
     }
-
+    //Métodos
     public void encender() {
         Scanner input = new Scanner(System.in);
         boolean bandera;
@@ -165,9 +159,7 @@ public class Nave {
                     continue;
                 }
             }
-
         } while (bandera != false);
-
     }
 
     public void apagar() {
@@ -177,5 +169,11 @@ public class Nave {
     public void acelerar() {
 
     }
+
+    public String toString(){
+        return "Nave [Nombre: "+nombre+ " - Tipo: "+tipo+"]";
+    }
+    
+
 
 }
